@@ -3,5 +3,5 @@ Spring Boot E-commerce website with Spring Data JPA, Spring Security In addition
 
 https://henry-jewelry.herokuapp.com
 
-![Home-Page](https://files.fm/f/vu847br3b)
+![Home-Page](https://files.fm/thumb_show.php?i=gy5g2jpgb&view)
 
