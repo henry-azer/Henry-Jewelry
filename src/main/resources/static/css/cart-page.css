@@ -1,0 +1,203 @@
+/* TOP BANNER RINGS START */
+.top-bg {
+    background: url("https://images.pexels.com/photos/1050244/pexels-photo-1050244.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") fixed no-repeat center;
+}
+
+/* TOP BANNER RINGS END */
+
+/* cart START */
+.cart-products {
+    background: rgb(230, 230, 230);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.cart-wrapper {
+    display: grid;
+    justify-items: center;
+}
+
+.cart-wrapper .cart-item {
+    display: grid;
+    border: 1px solid black;
+    grid-template-columns: repeat(4, 150px);
+    grid-template-rows: repeat(2, 50px);
+    grid-auto-flow: column;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 20px;
+    -webkit-transition: 0.5s;
+    transition: all .5s ease-in-out;
+    padding-right: 20px;
+}
+
+.cart-item div label {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.cart-item div label strong {
+    font-size: 17px;
+}
+
+.cart-item .product-img {
+    grid-row: 1/3;
+}
+
+.cart-item .product-img img {
+    padding: 5px;
+    height: 100px;
+    width: 100px;
+}
+
+.cart-item .product-discount {
+    grid-row: 2/3;
+}
+
+.cart-item .product-quantity input {
+    padding-left: 12px;
+    border: 1px solid black;
+    transition: all 0.4s ease-in-out;
+    text-align: center;
+    font-size: 16px;
+}
+
+.cart-item .btn {
+    margin: 0 auto;
+    display: flex;
+    padding: 6px 10px;
+    background: transparent;
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+    -webkit-transition: 0.3s;
+    transition: all 0.4s ease-in-out;
+    border: 1px solid black;
+}
+
+.cart-item button i {
+    padding-top: 2px;
+    padding-right: 5px;
+}
+
+.cart-item .cart-add:hover {
+    background: #012c03;
+    color: #ffffff;
+}
+
+.cart-item .cart-delete:hover {
+    background: rgb(99, 3, 3);
+    color: #ffffff;
+}
+
+.cart-products .user-action {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 20px auto 0;
+}
+
+.cart-products .empty-cart h2 {
+    padding-bottom: 30px;
+}
+
+.cart-products .user-action button,
+.cart-products .user-action a,
+.cart-products .empty-cart a {
+    padding: 10px 20px;
+    background: transparent;
+    color: #ffffff;
+    text-decoration: none;
+    -webkit-transition: 0.3s;
+    transition: all 0.4s ease-in-out;
+}
+
+.cart-products .user-action .buy-products {
+    background: rgba(4, 82, 4, 0.82);
+}
+
+.cart-products .user-action .buy-products:hover {
+    background: rgb(10, 48, 16);
+}
+
+.cart-products .empty-cart .back-products,
+.cart-products .user-action .back-products {
+    background: rgba(32, 32, 32, 0.8);
+}
+
+.cart-products .empty-cart .back-products:hover,
+.cart-products .user-action .back-products:hover {
+    background: rgb(0, 0, 0);
+}
+
+/* cart END */
+
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 992px) {
+
+    .top-bg {
+        background-position: 20%;
+    }
+
+}
+
+@media only screen and (max-width: 767.5px) {
+
+    .cart-wrapper .cart-item {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(13, 45px);
+        padding: 20px 35px 30px;
+    }
+
+    .cart-item .product-img {
+        width: 200px;
+        height: 220px;
+        padding-top: 20px;
+        grid-row: 2/4;
+    }
+
+    .cart-item .product-img img {
+        width: 210px;
+        height: 210px;
+        padding: 0;
+    }
+
+    .cart-item .product-name {
+        grid-row: 6;
+    }
+
+    .cart-item .product-discount {
+        grid-row: 9;
+    }
+
+    .cart-item .product-quantity button {
+        margin: 3px;
+    }
+
+    .cart-item .cart-add,
+    .cart-item .cart-delete{
+       display: flex;
+    }
+
+    .cart-item .cart-add i,
+    .cart-item .cart-delete i{
+        padding-right: 5px;
+        padding-top: 3px;
+    }
+
+    .cart-products .user-action {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2, 1fr);
+        margin-top: 20px;
+        grid-gap: 20px;
+    }
+
+    .cart-products .user-action .back-products {
+        grid-row: 2;
+    }
+
+}

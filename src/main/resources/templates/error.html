@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.9"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta charset="UTF-8"/>
+
+    <!-- Links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" th:href="@{css/home-page.css}"/>
+    <link rel="stylesheet" th:href="@{css/products.css}"/>
+    <link rel="stylesheet" th:href="@{css/error-page.css}"/>
+
+    <link rel="icon"
+          href="https://purepng.com/public/uploads/large/purepng.com-white-diamonddiamondallotrope-of-carbonadamantstone-1701528782891ofbaf.png">
+
+    <title>Error | Henry Jewelry</title>
+</head>
+
+<body>
+
+<!-- NAV BAR -->
+<header class="nav-bar" id="header">
+    <nav class="nav-wrapper">
+
+        <div class="nav-logo">
+            <a th:href="@{/}">Henry Jewelry </a>
+        </div>
+
+        <div class="nav-menu">
+            <ul class="nav-menu-elements">
+                <li><a href="#home" class="selected">Home</a></li>
+                <li><a href="#error" class="selected">Error</a></li>
+                <li><a href="#follow" class="selected">Follow</a></li>
+                <li><a href="#footer" class="selected">About</a></li>
+            </ul>
+        </div>
+
+        <div class="user-data">
+            <a th:href="@{/wishlist}" class="btn wishlist" data-tip="Wishlist">
+                <i class="fa fa-heart"></i>
+            </a>
+            <a th:href="@{/cart}" class="btn cart" data-tip="Cart">
+                <i class="fa fa-shopping-cart"></i>
+            </a>
+        </div>
+    </nav>
+
+    <nav class="nav-responsive">
+
+        <button class="nav-burger"
+                onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
+                aria-label="Main Menu">
+            <svg class="burger-svg" width="45" height="45" viewBox="0 0 100 100">
+                <path class="line line1"
+                      d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"/>
+                <path class="line line2" d="M 20,50 H 80"/>
+                <path class="line line3"
+                      d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"/>
+            </svg>
+        </button>
+
+        <div class="user-data-r">
+            <a th:href="@{/wishlist}" class="btn wishlist" data-tip="Wishlist">
+                <i class="fa fa-heart"></i>
+            </a>
+            <a th:href="@{/cart}" class="btn cart" data-tip="Cart">
+                <i class="fa fa-shopping-cart"></i>
+            </a>
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <div class="select-box">
+                    <div class="options-container" id="options-container1">
+                        <div class="option">
+                            <label><a th:href="@{/products}">Rings</a></label>
+                        </div>
+
+                        <div class="option">
+                            <label><a th:href="@{/products}">Necklace</a></label>
+                        </div>
+
+                        <div class="option">
+                            <label><a th:href="@{/products}">Earrings</a></label>
+                        </div>
+
+                    </div>
+                    <a href="#Collection" class="selected" id="selected1">Collection</a>
+                </div>
+            </li>
+
+            <li>
+                <div class="select-box">
+                    <div class="options-container" id="options-container2">
+                        <div class="option">
+                            <label><a th:href="@{/products}">Diamond</a></label>
+                        </div>
+
+                        <div class="option">
+                            <label><a th:href="@{/products}">Gold</a></label>
+                        </div>
+
+                        <div class="option">
+                            <label><a th:href="@{/products}">Silver</a></label>
+                        </div>
+                    </div>
+                    <a href="#Category" class="selected" id="selected2">Category</a>
+                </div>
+            </li>
+
+            <li>
+                <div class="select-box">
+                    <div class="options-container" id="options-container3">
+                        <div class="option" sec:authorize="!isAuthenticated()">
+                            <label><a th:href="@{/login}">Sign In</a></label>
+                        </div>
+                        <div class="option">
+                            <label><a th:href="@{/cart}">Cart</a></label>
+                        </div>
+                        <div class="option">
+                            <label><a th:href="@{/wishlist}">Wishlist</a></label>
+                        </div>
+                        <div class="option" sec:authorize="isAuthenticated()">
+                            <label><a th:href="@{/logout}">Sign Out</a></label>
+                        </div>
+                    </div>
+                    <a href="#Register" class="selected" id="selected3">User Info</a>
+                </div>
+            </li>
+
+            <li>
+                <div class="select-box">
+                    <div class="options-container" id="options-container4">
+                        <div class="option">
+                            <label><a href="https://henry-azer-portfolio.netlify.app/" target="_blank">Site Owner</a></label>
+                        </div>
+                    </div>
+                    <a href="#About" class="selected" id="selected4">About Us</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Top Banner -->
+<section class="top-bg" id="home"></section>
+<section class="down-bg"></section>
+
+<!-- Bread Crumb -->
+<section class="bread-crumb">
+    <div class="container">
+        <div class="crumbs">
+            <ul>
+                <li><a th:href="@{/}"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                <li><a href=""><i class="fa fa-exclamation-circle "></i> Error</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Error Handle -->
+<section class="error-handle" id="error">
+    <div class="section-header header-black">
+        <h2>Error </h2>
+        <p>issue description</p>
+    </div>
+
+    <div class="error-description">
+        <h1>Sorry, Something Wrong Happened</h1>
+    </div>
+
+    <div class="error-details">
+
+        <div class="row rowDesign">
+            <div>
+                <span class="legend">Date: </span>
+            </div>
+            <div class="status">
+                <span th:text="${timestamp}"></span>
+            </div>
+        </div>
+
+        <div class="row rowDesign">
+            <div>
+                <span class="legend">Path: </span>
+            </div>
+            <div class="status">
+                <span th:text="${path}"></span>
+            </div>
+        </div>
+        <div class="row rowDesign">
+            <div>
+                <span class="legend">Error: </span>
+            </div>
+            <div class="status">
+                <span th:text="${error}"></span>
+            </div>
+        </div>
+        <div class="row rowDesign">
+            <div>
+                <span class="legend">Status: </span>
+            </div>
+            <div class="status">
+                <span th:text="${status}"></span>
+            </div>
+        </div>
+        <div class="row rowDesign">
+            <div>
+                <span class="legend">Message: </span>
+            </div>
+            <div class="status">
+                <span th:text="${message}"></span>
+            </div>
+        </div>
+    </div>
+
+    <a th:href="@{/products}" class="btn back-home">
+        <i class="fa fa-search"></i>
+        <span>Back To Browse</span>
+    </a>
+
+</section>
+
+<!-- Social Media -->
+<section class="social-media" id="follow">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <h2>Follow Us</h2>
+                <ul class="social-icon">
+                    <li><a href="https://www.facebook.com/HeNaRyAzEr/" target="_blank" class="fa fa-facebook"></a>
+                    </li>
+                    <li><a href="https://wa.me/201207885279" target="_blank" class="fa fa-whatsapp"></a></li>
+                    <li><a href="https://github.com/Henry-Azer" target="_blank" class="fa fa-github"></a></li>
+                    <li><a href="https://www.linkedin.com/in/henry-azer-1220121a7/" target="_blank"
+                           class="fa fa-linkedin"></a></li>
+                    <li><a href="mailto:henryazer@outlook.com" target="_blank" class="fa fa-envelope"></a></li>
+                    <li><a href="tel:+201207885279" target="_blank" class="fa fa-phone"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer" class="footer">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md">
+                <div class="footer-widget mb-4">
+                    <h2 class="footer-heading-2">User Info</h2>
+                    <ul class="list-unstyled">
+                        <li><a th:href="@{/cart}" class="py-2 d-block">Cart</a></li>
+                        <li><a th:href="@{/wishlist}" class="py-2 d-block">Wishlist</a></li>
+                        <li><a href="https://henry-azer-portfolio.netlify.app/" target="_blank" class="py-2 d-block">Site Owner</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="footer-widget mb-4 ml-md-5">
+                    <h2 class="footer-heading-2">Categories</h2>
+                    <ul class="list-unstyled">
+                        <li><a th:href="@{/products}" class="py-2 d-block">Gold</a></li>
+                        <li><a th:href="@{/products}" class="py-2 d-block">Silver</a></li>
+                        <li><a th:href="@{/products}" class="py-2 d-block">Diamond</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="footer-widget mb-4">
+                    <h2 class="footer-heading-2">Collection</h2>
+                    <ul class="list-unstyled">
+                        <li><a th:href="@{/products}" class="py-2 d-block">Ring</a></li>
+                        <li><a th:href="@{/products}" class="py-2 d-block">Earrings</a></li>
+                        <li><a th:href="@{/products}" class="py-2 d-block">Necklace</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="footer-widget mb-4">
+                    <h2 class="footer-heading-2 contact-header">Contact</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="https://goo.gl/maps/nw6HGAk9s64i7949A" target="_blank"
+                               class="py-2 d-block">Cairo, EG</a></li>
+                        <li><a href="tel:+201207885279" target="_blank" class="py-2 d-block">+20 120 788 5279</a>
+                        </li>
+                        <li><a href="mailto:henryazer@outlook.com" target="_blank"
+                               class="py-2 d-block">henryazer@outlook.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>
+                    Copyright &copy;2020 All rights reserved | Developed by : Henry Azer
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Back To Top -->
+<a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+</script>
+<script th:src="@{lib/jquery/jquery.min.js}" type="text/javascript"></script>
+<script th:src="@{lib/jquery/jquery-migrate.min.js}" type="text/javascript"></script>
+<script th:src="@{scripts/jewelry.js}" type="text/javascript"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+/* TOP BANNER RINGS START */
+.top-bg {
+    background: url("https://images.pexels.com/photos/1454171/pexels-photo-1454171.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") fixed no-repeat center;
+}
+
+.down-bg {
+    height: 15vh;
+    position: relative;
+    width: 100%;
+    background: url("https://fv9-1.failiem.lv/thumb_show.php?i=27dzdraes&view") center no-repeat white;
+}
+
+.left-sidebar {
+    background-color: #333;
+}
+
+/* TOP BANNER RINGS END */
+
+
+/* PRODUCT START */
+.product {
+    background: rgb(230, 230, 230);
+    padding: 100px 0;
+}
+
+.product .product-details {
+    position: relative;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.product-details .product-img img {
+    width: 350px;
+    height: 410px;
+}
+
+.product-description {
+    padding-top: 30px;
+}
+
+.product-description div label {
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.product-description div label strong {
+    font-size: 20px;
+}
+
+.user-action {
+    padding-top: 20px;
+}
+
+.should-login .btn,
+.user-action .btn {
+    margin: 0 auto 15px;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    -webkit-transition: 0.3s;
+    transition: all 0.4s ease-in-out;
+}
+
+.user-action .add-wishlist {
+    background: rgba(99, 3, 3, 0.800);
+}
+
+.user-action .add-wishlist:hover {
+    background:  rgb(99, 3, 3);
+    color: white;
+}
+
+.user-action .add-cart {
+    background: #302f2f;
+}
+
+.user-action .add-cart:hover {
+    background: #000000;
+    color: white;
+}
+
+.should-login {
+    padding-top: 20px;
+}
+
+.should-login a {
+    background: #1c7430;
+}
+
+.should-login a:hover {
+    background: #14401E;
+    color: white;
+}
+/* PRODUCT END */
+
+/* SUGGESTED PRODUCTS START */
+.suggested {
+    width: 100%;
+    color: #000000;
+    padding: 60px 0;
+}
+
+/* SUGGESTED PRODUCTS END */
+
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 992px) {
+
+    .product {
+        padding: 50px 0;
+    }
+    .product-description {
+        padding-top: 0;
+    }
+    
+    .product .product-details {
+        padding-top: 30px;
+        grid-template-columns: repeat(1, 1fr);
+        border: 1px solid #000000;
+    }
+    
+
+    .product-details .product-img {
+        text-align: center;
+
+    }
+
+    .product-details .product-description {
+        padding: 20px 40px;
+    }    
+   
+    .product-details .user-action a {
+        margin: 10px;
+    }
+    
+}

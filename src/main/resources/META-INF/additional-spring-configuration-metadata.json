@@ -1,0 +1,23 @@
+{
+  "properties": [
+    {
+      "name": "security.ignored",
+      "type": "java.lang.String",
+      "description": "Description for security.ignored."
+    },
+    {
+      "name": "security.basic.enable",
+      "type": "java.lang.String",
+      "description": "Description for security.basic.enable."
+    },
+    {
+      "name": "mail.from.email",
+      "type": "java.lang.String",
+      "description": "Description for mail.from.email."
+    },
+    {
+      "name": "spring.jpa.database.platform",
+      "type": "java.lang.String",
+      "description": "Description for spring.jpa.database.platform."
+    }
+  ] }
