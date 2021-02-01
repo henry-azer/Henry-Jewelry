@@ -85,15 +85,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.heroku</groupId>
-            <artifactId>webapp-runner</artifactId>
-            <version>9.0.31.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>tomcat-jdbc</artifactId>
-        </dependency>
     </dependencies>
 
     <build>
